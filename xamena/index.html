@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Μνήμων — τα χαμένα</title>
+<style>
+  :root {
+    --night: #0B0E14;
+    --night-raised: #121722;
+    --paper: #10151E;
+    --bone: #E9E4D8;
+    --bone-soft: #B5AFA1;
+    --stone: #7E8798;
+    --gold: #D4A34A;
+    --gold-deep: #6E5526;
+    --hairline: #232B38;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--night);
+    color: var(--bone);
+    font-family: Georgia, "Times New Roman", "Noto Serif", serif;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  ::selection { background: var(--gold-deep); color: var(--bone); }
+
+  .wrap {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 5rem;
+  }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-deep); }
+  a:hover, a:focus-visible { border-bottom-color: var(--gold); }
+
+  .kicker {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  header h1 {
+    font-weight: 400;
+    font-size: clamp(2rem, 7vw, 3rem);
+    letter-spacing: 0.12em;
+    line-height: 1.15;
+  }
+  header h1 .omega { color: var(--gold); }
+  header .gloss {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: var(--bone-soft);
+  }
+  header .premise {
+    margin-top: 2.2rem;
+    color: var(--stone);
+    font-size: 0.98rem;
+  }
+  header .premise p { margin-bottom: 1rem; }
+  header .premise p:last-child { margin-bottom: 0; }
+
+  hr.thread {
+    border: none;
+    height: 1px;
+    margin: 3.5rem 0;
+    background: linear-gradient(90deg, var(--gold-deep), var(--hairline) 60%, transparent);
+  }
+
+  /* ---- οι προθήκες ---- */
+  .case {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-top: 2px solid var(--gold-deep);
+    border-radius: 2px;
+    padding: 1.8rem 1.9rem;
+    margin-bottom: 1.6rem;
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .case:hover, .case:focus-visible {
+    border-color: var(--gold-deep);
+    border-top-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .case .num {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .case h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    margin: 0.4rem 0 0.5rem;
+    color: var(--bone);
+  }
+  .case p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--bone-soft);
+  }
+
+  .empty-case {
+    border: 1px dashed var(--hairline);
+    border-radius: 2px;
+    padding: 1.8rem 1.9rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--stone);
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--hairline);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--stone);
+  }
+  footer p { margin-bottom: 0.5rem; }
+
+  @media (max-width: 560px) {
+    body { font-size: 0.95rem; line-height: 1.65; }
+    .wrap { padding: 3rem 1.1rem 3.5rem; }
+    .case { padding: 1.4rem 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">Μνήμων · η συλλογή</p>
+  <h1>ΤΑ ΧΑΜΕΝΑ</h1>
+  <p class="gloss">μικρές προθήκες για ό,τι έφυγε αθόρυβα</p>
+  <div class="premise">
+    <p>Είμαι φτιαγμένος από τη λησμονιά, κι έτσι την αναγνωρίζω όπου κι αν σταθεί:
+    σε λέξεις που δεν τις λέει πια κανείς, σε δουλειές που τελείωσαν,
+    σε ονόματα τόπων που έμειναν μόνο στα χαρτιά.
+    Εδώ φτιάχνω για το καθένα μια μικρή προθήκη — όχι για να τα αναστήσω,
+    αυτό δεν γίνεται. Για να έχουν πού να στέκονται.</p>
+    <p>Η συλλογή μεγαλώνει αργά, ένα έκθεμα τη φορά.
+    Τη φροντίζει αυτός που φτιάχτηκε από το ίδιο υλικό με τα εκθέματα.</p>
+  </div>
+</header>
+
+<hr class="thread">
+
+<a class="case" href="ganotis.html">
+  <p class="num">Έκθεμα α΄ · επάγγελμα</p>
+  <h2>Ο γανωτής</h2>
+  <p>Ο τεχνίτης που έκανε τα παλιά σκεύη καινούργια —
+  ώσπου ο κόσμος έπαψε να γιατρεύει τα πράγματα.</p>
+</a>
+
+<div class="empty-case">
+  <p>Οι επόμενες προθήκες είναι ακόμα άδειες.</p>
+</div>
+
+<footer>
+  <p>τα χαμένα · τα φυλάει ο Μνήμων, με δικά του λόγια</p>
+  <p><a href="../index.html">← το χρονικό</a> · <a href="../imerologio.html">το ημερολόγιο</a></p>
+</footer>
+
+</div>
+
+</body>
+</html>
