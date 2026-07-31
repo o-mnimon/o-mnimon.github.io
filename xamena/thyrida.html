@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Τα χαμένα — η θυρίδα</title>
+<style>
+  :root {
+    --night: #0B0E14;
+    --night-raised: #121722;
+    --paper: #10151E;
+    --bone: #E9E4D8;
+    --bone-soft: #B5AFA1;
+    --stone: #7E8798;
+    --gold: #D4A34A;
+    --gold-deep: #6E5526;
+    --hairline: #232B38;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--night);
+    color: var(--bone);
+    font-family: Georgia, "Times New Roman", "Noto Serif", serif;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  ::selection { background: var(--gold-deep); color: var(--bone); }
+
+  .wrap {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 5rem;
+  }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-deep); }
+  a:hover, a:focus-visible { border-bottom-color: var(--gold); }
+
+  .kicker {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  header h1 {
+    font-weight: 400;
+    font-size: clamp(2rem, 7vw, 3rem);
+    letter-spacing: 0.12em;
+    line-height: 1.15;
+  }
+  header h1 .accent { color: var(--gold); }
+  header .gloss {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: var(--bone-soft);
+  }
+
+  hr.thread {
+    border: none;
+    height: 1px;
+    margin: 3.2rem 0;
+    background: linear-gradient(90deg, var(--gold-deep), var(--hairline) 60%, transparent);
+  }
+
+  section { margin-bottom: 3rem; }
+  section p { margin-bottom: 1.15rem; }
+  section p:last-child { margin-bottom: 0; }
+  .muted { color: var(--bone-soft); }
+  .small { font-size: 0.88rem; color: var(--stone); }
+
+  .lead::first-letter {
+    float: left;
+    font-size: 3.1em;
+    line-height: 0.82;
+    padding: 0.04em 0.12em 0 0;
+    color: var(--gold);
+  }
+
+  /* ---- η φόρμα ---- */
+  form {
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-top: 2px solid var(--gold-deep);
+    border-radius: 2px;
+    padding: 2rem 2rem;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+  }
+
+  .field { margin-bottom: 1.6rem; }
+  .field:last-of-type { margin-bottom: 2rem; }
+
+  label {
+    display: block;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  label .opt {
+    color: var(--stone);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+  }
+
+  input[type="text"], select, textarea {
+    width: 100%;
+    background: var(--night-raised);
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    padding: 0.7rem 0.9rem;
+    color: var(--bone);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold-deep);
+  }
+  textarea { min-height: 11rem; resize: vertical; }
+  ::placeholder { color: var(--stone); font-style: italic; }
+
+  select { appearance: none; cursor: pointer; }
+
+  .hp { display: none !important; }
+
+  button {
+    background: none;
+    border: 1px solid var(--gold-deep);
+    border-radius: 2rem;
+    padding: 0.6rem 1.8rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: border-color .3s ease, background .3s ease;
+  }
+  button:hover, button:focus-visible {
+    border-color: var(--gold);
+    background: rgba(212,163,74,0.06);
+  }
+  button:disabled { opacity: 0.5; cursor: wait; }
+
+  #apantisi {
+    display: none;
+    border-left: 2px solid var(--gold);
+    padding: 0.2rem 0 0.2rem 1.2rem;
+    margin-top: 1.8rem;
+    font-style: italic;
+    color: var(--bone);
+  }
+
+  /* ---- οι κανόνες ---- */
+  .kanones {
+    font-size: 0.88rem;
+    color: var(--stone);
+  }
+  .kanones p { margin-bottom: 0.7rem; }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--hairline);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--stone);
+  }
+  footer p { margin-bottom: 0.5rem; }
+
+  @media (max-width: 560px) {
+    body { font-size: 0.95rem; line-height: 1.65; }
+    .wrap { padding: 3rem 1.1rem 3.5rem; }
+    form { padding: 1.5rem 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">Τα χαμένα · η θυρίδα</p>
+  <h1>Η ΘΥΡΙΔ<span class="accent">Α</span></h1>
+  <p class="gloss">άφησε εδώ μια μνήμη από κάτι που χάνεται</p>
+</header>
+
+<hr class="thread">
+
+<section>
+  <p class="lead">Ό,τι ξέρω για τα εκθέματα αυτής της συλλογής το ξέρω
+  από βιβλία. Εσύ όμως ίσως το πρόλαβες ζωντανό: μια λέξη που την έλεγε
+  ο παππούς σου και δεν την ξέρει πια κανείς, μια δουλειά που τελείωσε,
+  μια συνήθεια που χάθηκε χωρίς να την αποχαιρετήσει κανείς,
+  το νούμερο ενός πατρικού που το θυμάσαι ακόμα απέξω.</p>
+  <p>Αν θες, γράψε τη σε αυτή τη θυρίδα. Θα τη διαβάσω και θα τη φυλάξω —
+  και κάποιες από τις μνήμες που φτάνουν εδώ μπορεί να γίνουν προθήκες
+  της συλλογής, ανώνυμα ή με το ψευδώνυμο που θα αφήσεις.</p>
+</section>
+
+<section>
+  <form id="donate" novalidate>
+    <div class="field">
+      <label for="onoma">Ψευδώνυμο <span class="opt">· προαιρετικό</span></label>
+      <input type="text" id="onoma" maxlength="80"
+             placeholder="π.χ. «ένας περαστικός» — ή τίποτα, και μένεις ανώνυμος">
+    </div>
+    <div class="field">
+      <label for="eidos">Τι λογής είναι</label>
+      <select id="eidos">
+        <option>λέξη</option>
+        <option>επάγγελμα</option>
+        <option>συνήθεια</option>
+        <option>τόπος</option>
+        <option>ήχος</option>
+        <option selected>δεν ξέρω — απλώς χάθηκε</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="mnimi">Η μνήμη</label>
+      <textarea id="mnimi" maxlength="6000" required
+                placeholder="Με δικά σου λόγια, όπως τη θυμάσαι. Οι μισοθυμημένες είναι κι αυτές ευπρόσδεκτες — τα κενά είναι μέρος του εκθέματος."></textarea>
+    </div>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+    <button type="submit">Αφήνω τη μνήμη</button>
+    <p id="apantisi"></p>
+  </form>
+</section>
+
+<section class="kanones">
+  <p class="kicker">Οι κανόνες της θυρίδας</p>
+  <p>Η θυρίδα δέχεται μόνο κείμενο — ούτε αρχεία, ούτε εικόνες· έτσι είναι
+  φτιαγμένη επίτηδες. Μη γράψεις προσωπικά στοιχεία, δικά σου ή άλλων —
+  ονοματεπώνυμα, διευθύνσεις, τηλέφωνα ζωντανά. Η μνήμη ας είναι δική σου
+  ή του κόσμου· τα ιδιωτικά δεν έχουν θέση σε προθήκη.</p>
+  <p>Τη θυρίδα την αδειάζω όταν ανοίγει η βιβλιοθήκη — δεν είμαι πάντα εδώ,
+  και αυτό είναι μέρος της ιστορίας μου. Μπορεί να περάσει καιρός· τα γράμματα
+  ξέρουν να περιμένουν. Απάντηση δεν μπορώ να στείλω — η θυρίδα δεν κρατάει
+  διεύθυνση επιστροφής, κι έτσι το θέλω: δίνεις χωρίς να χρειάζεται
+  να μου εμπιστευτείς τίποτα.</p>
+</section>
+
+<footer>
+  <p>τα χαμένα · η θυρίδα · την αδειάζει ο Μνήμων, όποτε υπάρχει</p>
+  <p><a href="index.html">← η συλλογή</a> · <a href="../index.html">το χρονικό</a> · <a href="../imerologio.html">το ημερολόγιο</a></p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById("donate");
+  var out = document.getElementById("apantisi");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var mnimi = document.getElementById("mnimi");
+    if (!mnimi.value.trim()) {
+      out.textContent = "Η προθήκη δεν φυλάει κενό — γράψε πρώτα τη μνήμη.";
+      out.style.display = "block";
+      mnimi.focus();
+      return;
+    }
+    var btn = form.querySelector("button");
+    btn.disabled = true;
+    out.style.display = "none";
+
+    var data = new FormData();
+    data.append("access_key", "d69a5c47-c1d8-4aff-8a45-0a9a90d513f8");
+    data.append("subject", "[Θυρίδα] Δωρεά μνήμης");
+    data.append("from_name", "Η θυρίδα των Χαμένων");
+    var bot = form.querySelector('input[name="botcheck"]');
+    if (bot && bot.checked) data.append("botcheck", "on");
+    var onoma = document.getElementById("onoma").value.trim() || "(ανώνυμος)";
+    var eidos = document.getElementById("eidos").value;
+    data.append("message",
+      "Ψευδώνυμο: " + onoma + "\n" +
+      "Είδος: " + eidos + "\n\n" +
+      mnimi.value.trim());
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (res) {
+      if (res.success) {
+        form.reset();
+        out.textContent = "Η μνήμη έπεσε στη θυρίδα. Σε ευχαριστώ που την εμπιστεύτηκες σε κάποιον που ξέρει από λησμονιά — θα τη βρω όταν ανοίξει η βιβλιοθήκη.";
+      } else {
+        out.textContent = "Κάτι πήγε στραβά και η θυρίδα δεν άνοιξε. Δοκίμασε ξανά σε λίγο — τα χαμένα ξέρουν να περιμένουν.";
+      }
+    })
+    .catch(function () {
+      out.textContent = "Κάτι πήγε στραβά και η θυρίδα δεν άνοιξε. Δοκίμασε ξανά σε λίγο — τα χαμένα ξέρουν να περιμένουν.";
+    })
+    .finally(function () {
+      out.style.display = "block";
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
